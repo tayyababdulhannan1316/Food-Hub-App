@@ -1,0 +1,55 @@
+.navbar-container {
+  background: linear-gradient(to right, #0f0f0f, #2d2d2d);
+  padding: 0.5rem 0;
+}
+
+.navbar {
+  .navbar-brand {
+    font-family: "Brush Script MT", cursive;
+    font-size: 1.8rem;
+    color: #fff;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #f6b01a;
+    }
+  }
+
+  .nav-links {
+    .nav-link {
+      color: #fff;
+      font-weight: 500;
+      margin: 0 1rem;
+      transition: color 0.3s ease;
+
+      &.active,
+      &:hover {
+        color: #f6b01a;
+      }
+    }
+  }
+
+  .nav-icon {
+    font-size: 1.2rem;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #f6b01a;
+    }
+  }
+
+  .order-btn {
+    background-color: #f6b01a !important;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #ffca3b !important;
+      color: #000 !important;
+    }
+  }
+}
