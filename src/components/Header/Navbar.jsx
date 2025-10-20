@@ -1,10 +1,30 @@
 import React from "react";
 import { Button } from "antd";
-import { Link } from "react-router-dom";
-import { UserOutlined, ShoppingCartOutlined, SearchOutlined } from "@ant-design/icons";
-
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import {
+  UserOutlined,
+  ShoppingCartOutlined,
+  SearchOutlined,
+} from "@ant-design/icons";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Handles Menu click (scrolls if already on home, otherwise navigates)
+  const handleMenuClick = (e) => {
+    e.preventDefault();
+
+    if (location.pathname === "/") {
+      const menuSection = document.getElementById("menu-section");
+      if (menuSection) {
+        menuSection.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      navigate("/#menu-section");
+    }
+  };
+
   return (
     <header className="navbar-container">
       <nav className="navbar navbar-expand-lg">
@@ -28,25 +48,53 @@ const Navbar = () => {
           </button>
 
           {/* Links */}
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <div
+            className="collapse navbar-collapse"
+            id="navbarSupportedContent"
+          >
             <ul className="navbar-nav mx-auto mb-2 mb-lg-0 nav-links">
               <li className="nav-item">
-                <Link to="/" className="nav-link active">
+                <Link
+                  to="/"
+                  className={`nav-link ${
+                    location.pathname === "/" ? "active" : ""
+                  }`}
+                >
                   HOME
                 </Link>
               </li>
+
               <li className="nav-item">
-                <Link to="/menu" className="nav-link">
+                {/* Smooth scroll handler */}
+                <a
+                  href="/#menu-section"
+                  onClick={handleMenuClick}
+                  className={`nav-link ${
+                    location.pathname === "/menu" ? "active" : ""
+                  }`}
+                >
                   MENU
-                </Link>
+                </a>
               </li>
+
               <li className="nav-item">
-                <Link to="/about" className="nav-link">
+                <Link
+                  to="/about"
+                  className={`nav-link ${
+                    location.pathname === "/about" ? "active" : ""
+                  }`}
+                >
                   ABOUT
                 </Link>
               </li>
+
               <li className="nav-item">
-                <Link to="/book-table" className="nav-link">
+                <Link
+                  to="/book-table"
+                  className={`nav-link ${
+                    location.pathname === "/book-table" ? "active" : ""
+                  }`}
+                >
                   BOOK TABLE
                 </Link>
               </li>
@@ -74,82 +122,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React, { useContext } from "react";
-// import { Button } from "antd";
-// import { Link } from "react-router-dom";
-
-// const Navbar = () => {
-//   return (
-//     <header>
-//       <nav className="navbar navbar-expand-lg bg-primary navbar-dark">
-//         <div className="container">
-//           <Link to="/" className="navbar-brand">
-//             Food-Hub
-//           </Link>
-//           <button
-//             className="navbar-toggler"
-//             type="button"
-//             data-bs-toggle="collapse"
-//             data-bs-target="#navbarSupportedContent"
-//             aria-controls="navbarSupportedContent"
-//             aria-expanded="false"
-//             aria-label="Toggle navigation"
-//           >
-//             <span className="navbar-toggler-icon"></span>
-//           </button>
-//           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-//             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-//               <li className="nav-item">
-//                 <Link to="/" className="nav-link active">
-//                   HOME
-//                 </Link>
-//               </li>
-//               <li className="nav-item">
-//                 <Link to="/menu" className="nav-link active">
-//                   MENU
-//                 </Link>
-//               </li>
-//               <li className="nav-item">
-//                 <Link to="/about" className="nav-link active">
-//                   ABOUT
-//                 </Link>
-//               </li>
-//               <li className="nav-item">
-//                 <Link to="/book-table" className="nav-link active">
-//                   BOOKTABLE
-//                 </Link>
-//               </li>
-//             </ul>
-//             <form className="d-flex">
-//               <Button type="primary"  shape="round" size="large">
-//                 Order Online
-//               </Button>
-//             </form>
-//           </div>
-//         </div>
-//       </nav>
-//     </header>
-//   );
-// };
-
-// export default Navbar;

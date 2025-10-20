@@ -1,4 +1,5 @@
 .hero-section {
+  background: linear-gradient(to right, #0f0f0f, #2d2d2d);
   height: 100vh;
   background-size: cover;
   background-position: center;
@@ -8,6 +9,7 @@
   align-items: center;
   justify-content: flex-start;
   overflow: hidden;
+  margin-top: 0;
 
   .hero-overlay {
     width: 100%;
@@ -16,6 +18,10 @@
     display: flex;
     align-items: center;
     padding-left: 8%;
+
+    &:hover {
+      color: #f6b01a;
+    }
   }
 
   .text-wrapper {
@@ -23,6 +29,10 @@
     width: 45%;
     overflow: hidden;
     min-height: 250px; // ensures stable height
+
+    &:hover {
+      color: #f6b01a;
+    }
   }
 
   .text-slide {
@@ -31,13 +41,14 @@
     color: #fff;
 
     h1 {
-      font-family: "Dancing Script", cursive;
+      font-family: "Brush Script MT", cursive;
       font-size: 3rem;
       margin-bottom: 20px;
       color: #fff;
     }
 
     p {
+      font-family: "Dancing Script", cursive;
       color: #eee;
       font-size: 1rem;
       line-height: 1.6;
@@ -45,22 +56,47 @@
     }
 
     .hero-btn {
-      background-color: #f1b740;
+      background-color: #f6b01a !important;
       border: none;
-      color: #000;
-      font-weight: bold;
-      border-radius: 25px;
-      padding: 0 2rem;
-      height: 45px;
+      color: #fff;
+      font-weight: 600;
       transition: all 0.3s ease;
+
       &:hover {
-        background-color: #d9a830;
+        background-color: #ffca3b !important;
+        color: #fff !important;
+      }
+    }
+  }
+
+  /* 🔸 Dot indicators */
+  .dots {
+    display: flex;
+    gap: 5px;
+    margin-top: 300px;
+    align-items: center;
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      background-color: #fff;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &.active {
+        background-color: #f6b01a;
+        transform: scale(1.3);
+      }
+
+      &:hover {
+        background-color: #f6b01a;
       }
     }
   }
 }
 
-// ✨ Sliding animation for text moving on image
+/*  Sliding animation for text moving on image */
 @keyframes slideText {
   0% {
     transform: translateX(100%);
