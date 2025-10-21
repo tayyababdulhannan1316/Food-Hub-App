@@ -22,22 +22,22 @@ const Footer = () => {
           <div className="col-md-4 mb-4 mb-md-0 text-md-start text-center">
             <h5 className="footer-title">Contact Us</h5>
             <p>
-              <EnvironmentOutlined /> Location
+              <EnvironmentOutlined /> Pakistan
             </p>
             <p>
-              <PhoneOutlined /> Call +01 1234567890
+              <PhoneOutlined /> Call +92 3041686872
             </p>
             <p>
-              <MailOutlined /> demo@gmail.com
+              <MailOutlined /> tayyab.abdulhannan@gmail.com
             </p>
           </div>
 
           {/* Brand Info */}
           <div className="col-md-4 mb-4 mb-md-0 text-center">
-            <h3 className="footer-brand">Feane</h3>
+            <h3 className="footer-brand">Food-Hub</h3>
             <p className="footer-text">
-              Necessary, making this the first true generator on the Internet.
-              It uses a dictionary of over 200 Latin words, combined with
+              The best way to find yourself is to lose yourself in the service
+              of others.              
             </p>
             <div className="social-icons mt-3">
               <FacebookFilled />
@@ -52,14 +52,14 @@ const Footer = () => {
           <div className="col-md-4 mb-4 mb-md-0 text-md-end text-center">
             <h5 className="footer-title">Opening Hours</h5>
             <p>Everyday</p>
-            <p>10.00 Am - 10.00 Pm</p>
+            <p>10.00 AM - 10.00 PM</p>
           </div>
         </div>
 
         {/* Copyright Section */}
         <div className="text-center mt-4 footer-bottom">
-          <p>© {year} All Rights Reserved By Free Html Templates</p>
-          <p>© Distributed By ThemeWagon</p>
+          <p>© {year} All Rights Reserved By Tayyab Abdul Hannan</p>
+          
         </div>
       </div>
     </footer>
@@ -67,30 +67,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
-
-
-
-
-
-
-
-
-// import React from 'react'
-
-// const Copyright = () => {
-//     const year = new Date().getFullYear()
-//   return (
-//     <footer className='bg-primary py-2'>
-//       <div className='container'>
-//         <div className='row'>
-//             <div className='col'>
-//                 <p className='mb-0 text-white text-center'>&copy; {year}. all Rights Reserved</p>
-//             </div>
-//         </div>
-//       </div>
-//     </footer>
-//   )
-// }
-
-// export default Copyright

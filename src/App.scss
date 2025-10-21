@@ -16,3 +16,13 @@
 main{
     flex: 1 0 auto
 }
+html {
+  scroll-behavior: smooth;
+}
+
+.navbar-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}

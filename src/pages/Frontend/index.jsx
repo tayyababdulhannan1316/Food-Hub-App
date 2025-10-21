@@ -1,4 +1,3 @@
-
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Header from "../../components/Header"
@@ -16,7 +15,7 @@ const Frontend = () => {
 
     <Routes>
       <Route path='/' element={<Home />} />
-      <Route path='/Menu' element={<Menu />} />
+      <Route path='/menu' element={<Menu />} />
       <Route path='/About' element={<About />} />
       <Route path='/book-table' element={<BookTable />} />
       <Route path='*' element={<NoPage />} />
